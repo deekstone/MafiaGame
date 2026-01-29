@@ -1,5 +1,7 @@
 # Mafia
 
+[![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](./CONTRIBUTING.md) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
+
 A real-time multiplayer Mafia game with a React frontend and Node.js/Express backend, using Socket.IO for live game state and WebSocket communication.
 
 **Contributions are welcome.** See [Contributing](./CONTRIBUTING.md) for how to get involved.
