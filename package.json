@@ -1,0 +1,19 @@
+{
+  "name": "mafia",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "pnpm@10.14.0",
+  "scripts": {
+    "dev": "concurrently \"pnpm --filter ./my-node-ts dev\" \"pnpm --filter ./mafia-frontend dev\"",
+    "dev:backend": "pnpm --filter ./my-node-ts dev",
+    "dev:frontend": "pnpm --filter ./mafia-frontend dev",
+    "build": "pnpm --filter ./my-node-ts build && pnpm --filter ./mafia-frontend build",
+    "build:backend": "pnpm --filter ./my-node-ts build",
+    "build:frontend": "pnpm --filter ./mafia-frontend build",
+    "install:all": "pnpm install",
+    "lint": "pnpm --filter ./my-node-ts lint && pnpm --filter ./mafia-frontend lint"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}

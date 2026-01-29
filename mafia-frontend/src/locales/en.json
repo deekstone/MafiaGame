@@ -1,0 +1,174 @@
+{
+  "common": {
+    "mafia": "Mafia",
+    "settings": "Settings",
+    "close": "Close",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "submitting": "Submitting...",
+    "unknown": "Unknown",
+    "you": "(You)",
+    "youLower": "(you)",
+    "host": "(host)",
+    "vote": "Vote",
+    "voted": "Voted",
+    "dead": "Dead",
+    "join": "Join",
+    "send": "Send",
+    "sending": "Sending...",
+    "shuffle": "Shuffle",
+    "tryAgain": "Try again",
+    "day": "Day",
+    "night": "Night"
+  },
+  "errors": {
+    "failedToLoadGames": "Failed to load games",
+    "unexpectedErrorLoadingGames": "An unexpected error occurred while loading games",
+    "failedToFetchGames": "Failed to fetch games",
+    "socketNotInitialized": "Socket not initialized",
+    "failedToCreateGame": "Failed to create game",
+    "failedToJoinGame": "Failed to join game",
+    "failedToStartGame": "Failed to start game",
+    "failedToVote": "Failed to vote"
+  },
+  "loading": {
+    "mafiaGame": "Mafia Game",
+    "loadingGames": "Loading games..."
+  },
+  "lobby": {
+    "welcome": "Welcome!",
+    "createNewGame": "Create New Game",
+    "creatingGame": "Creating...",
+    "createGame": "Create Game",
+    "settingsAria": "Settings",
+    "backToLobby": "Back to lobby"
+  },
+  "settings": {
+    "title": "Settings",
+    "theme": "Theme",
+    "themeDescription": "Choose between light and dark mode",
+    "lightMode": "Light Mode",
+    "darkMode": "Dark Mode",
+    "currentlyUsingTheme": "Currently using {{theme}} theme",
+    "switchToLight": "Switch to Light",
+    "switchToDark": "Switch to Dark",
+    "language": "Language",
+    "languageDescription": "Choose your preferred language",
+    "currentlyUsingLanguage": "Currently using {{lang}}",
+    "english": "English",
+    "arabic": "العربية",
+    "switchToEnglish": "English",
+    "switchToArabic": "العربية"
+  },
+  "gameInstructions": {
+    "title": "Game Instructions",
+    "howToPlay": "How to Play",
+    "intro": "Mafia is a party game of strategy and deduction. Players are secretly assigned roles as either Mafia members, a Doctor, or Villagers. The Mafia try to eliminate the townspeople, while the townspeople try to identify and eliminate the Mafia.",
+    "roles": "Roles",
+    "mafiaRole": "Mafia:",
+    "mafiaDesc": "Vote during the night phase to eliminate a player. Work together to eliminate all villagers and the doctor.",
+    "doctorRole": "Doctor:",
+    "doctorDesc": "Vote during the night phase to heal a player. If you heal the same player the mafia targets, you save them from death. Keep your identity secret!",
+    "villagerRole": "Villager:",
+    "villagerDesc": "Vote during the day phase to lynch a suspected mafia member. Use discussion and deduction to identify the mafia.",
+    "roleDistribution": "Role Distribution:",
+    "roleDistributionDesc": "For 7+ players: 2 Mafia, 1 Doctor, rest are Villagers. For smaller games: 1 Mafia, 1 Doctor, rest are Villagers.",
+    "gamePhases": "Game Phases",
+    "dayPhase": "Day Phase (60 seconds):",
+    "dayPhaseDesc": "All alive players discuss and vote to lynch a suspect. The player with the most votes is eliminated. You can change your vote at any time during the phase.",
+    "nightPhase": "Night Phase (60 seconds):",
+    "nightPhaseDesc": "Mafia members vote to kill a player (majority vote decides). The Doctor votes to heal a player. If the Doctor heals the same player the Mafia targets, that player is saved. Villagers cannot act during the night.",
+    "phaseTransition": "Phases automatically transition after 60 seconds. The game alternates between Day and Night until a team wins.",
+    "votingRules": "Voting Rules",
+    "votingRule1": "Only alive players can vote or comment",
+    "votingRule2": "Votes are counted by majority - the player with the most votes is selected",
+    "votingRule3": "You can change your vote at any time during the phase",
+    "votingRule4": "You can abstain by not voting or removing your vote",
+    "winningConditions": "Winning Conditions",
+    "villagersWin": "Villagers Win:",
+    "villagersWinDesc": "All Mafia members are eliminated",
+    "mafiaWins": "Mafia Wins:",
+    "mafiaWinsDesc1": "Mafia equal or outnumber all other players (villagers + doctor)",
+    "mafiaWinsDesc2": "No doctors remain and Mafia equal or outnumber villagers"
+  },
+  "gamesList": {
+    "creatingGame": "Creating Game...",
+    "createNewGame": "Create New Game",
+    "availableGames": "Available Games",
+    "noGames": "No games available. Create one to get started!"
+  },
+  "nicknameForm": {
+    "enterNickname": "Enter your nickname",
+    "nicknamePlaceholder": "Your nickname",
+    "chooseAvatar": "Choose your avatar",
+    "selectedAvatar": "Selected avatar",
+    "selectAvatar": "Select avatar",
+    "avatarOption": "Avatar option"
+  },
+  "gameNameForm": {
+    "enterGameName": "Enter game name",
+    "gameNamePlaceholder": "Game name"
+  },
+  "gameCard": {
+    "yourGame": "Your Game",
+    "joined": "Joined",
+    "host": "Host: {{name}}",
+    "players": "Players:",
+    "inGame": "In Game",
+    "justNow": "Just now",
+    "minsAgo": "{{count}}m ago",
+    "hoursAgo": "{{count}}h ago",
+    "daysAgo": "{{count}}d ago"
+  },
+  "onlinePlayers": {
+    "title": "Online Players ({{count}})",
+    "loading": "Loading players...",
+    "noPlayers": "No players online"
+  },
+  "game": {
+    "startGame": "Start Game",
+    "gameLog": "Game Log",
+    "noLogEntries": "No log entries yet. Game events will appear here.",
+    "hostedBy": "Hosted by",
+    "chat": "Chat",
+    "players": "Players",
+    "comments": "Comments",
+    "commentPlaceholder": "Type your comment... (Press Enter to send, Shift+Enter for new line)",
+    "charactersCount": "{{count}}/500 characters",
+    "noComments": "No comments yet. Be the first to comment!",
+    "noPlayersYet": "No players yet.",
+    "gameOver": "Game Over!",
+    "villagersWon": "Villagers Won the game!",
+    "mafiaWon": "Mafia Won the game!",
+    "gameStarted": "Game started!"
+  },
+  "status": {
+    "waiting": "waiting",
+    "inProgress": "in progress",
+    "finished": "finished",
+    "cancelled": "cancelled"
+  },
+  "roles": {
+    "mafia": "Mafia",
+    "doctor": "Doctor",
+    "villager": "Villager",
+    "yourRole": "Your Role: {{role}}",
+    "mafiaDescription": "You are part of the Mafia. Vote together to eliminate villagers at night.",
+    "doctorDescription": "You are the Doctor. Save players from mafia attacks by healing them at night.",
+    "villagerDescription": "You are a Villager. Work with others to identify and lynch the mafia during the day."
+  },
+  "voting": {
+    "voteToLynch": "Vote to Lynch",
+    "voteToKill": "Vote to Kill",
+    "chooseToHeal": "Choose to Heal",
+    "chooseWhoToLynch": "Choose who to lynch:",
+    "chooseWhoToKill": "Choose who to kill:",
+    "chooseWhoToHeal": "Choose who to heal:",
+    "chooseTarget": "Choose a target:",
+    "abstain": "Abstain (No vote)",
+    "updateVote": "Update Vote"
+  },
+  "modal": {
+    "closeAria": "Close"
+  }
+}

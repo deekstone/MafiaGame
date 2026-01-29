@@ -1,0 +1,1 @@
+export { GameInstructions } from './GameInstructions'

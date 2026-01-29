@@ -1,0 +1,1 @@
+export { GameWinnerModal } from './GameWinnerModal'

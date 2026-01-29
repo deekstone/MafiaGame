@@ -1,0 +1,1 @@
+export { GameContentLayout } from './GameContentLayout'

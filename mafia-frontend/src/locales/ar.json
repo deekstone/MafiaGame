@@ -1,0 +1,174 @@
+{
+  "common": {
+    "mafia": "مافيا",
+    "settings": "الإعدادات",
+    "close": "إغلاق",
+    "cancel": "إلغاء",
+    "submit": "إرسال",
+    "submitting": "جاري الإرسال...",
+    "unknown": "غير معروف",
+    "you": "(أنت)",
+    "youLower": "(أنت)",
+    "host": "(مضيف)",
+    "vote": "تصويت",
+    "voted": "صوّت",
+    "dead": "ميت",
+    "join": "انضم",
+    "send": "إرسال",
+    "sending": "جاري الإرسال...",
+    "shuffle": "خلط",
+    "tryAgain": "حاول مرة أخرى",
+    "day": "نهار",
+    "night": "ليل"
+  },
+  "errors": {
+    "failedToLoadGames": "فشل تحميل الألعاب",
+    "unexpectedErrorLoadingGames": "حدث خطأ غير متوقع أثناء تحميل الألعاب",
+    "failedToFetchGames": "فشل جلب الألعاب",
+    "socketNotInitialized": "الاتصال غير مهيأ",
+    "failedToCreateGame": "فشل إنشاء اللعبة",
+    "failedToJoinGame": "فشل الانضمام للعبة",
+    "failedToStartGame": "فشل بدء اللعبة",
+    "failedToVote": "فشل التصويت"
+  },
+  "loading": {
+    "mafiaGame": "لعبة المافيا",
+    "loadingGames": "جاري تحميل الألعاب..."
+  },
+  "lobby": {
+    "welcome": "مرحباً!",
+    "createNewGame": "إنشاء لعبة جديدة",
+    "creatingGame": "جاري الإنشاء...",
+    "createGame": "إنشاء لعبة",
+    "settingsAria": "الإعدادات",
+    "backToLobby": "العودة للصالة"
+  },
+  "settings": {
+    "title": "الإعدادات",
+    "theme": "المظهر",
+    "themeDescription": "اختر بين الوضع الفاتح والداكن",
+    "lightMode": "الوضع الفاتح",
+    "darkMode": "الوضع الداكن",
+    "currentlyUsingTheme": "الاستخدام الحالي: مظهر {{theme}}",
+    "switchToLight": "التحويل للفاتح",
+    "switchToDark": "التحويل للداكن",
+    "language": "اللغة",
+    "languageDescription": "اختر لغتك المفضلة",
+    "currentlyUsingLanguage": "اللغة الحالية: {{lang}}",
+    "english": "English",
+    "arabic": "العربية",
+    "switchToEnglish": "English",
+    "switchToArabic": "العربية"
+  },
+  "gameInstructions": {
+    "title": "تعليمات اللعبة",
+    "howToPlay": "كيفية اللعب",
+    "intro": "المافيا لعبة حفلات استراتيجية واستنتاج. يُعيَّن اللاعبون أدواراً سرية كأعضاء مافيا أو طبيب أو قرويين. تحاول المافيا التخلص من القرويين، بينما يحاول القرويون اكتشاف وإعدام المافيا.",
+    "roles": "الأدوار",
+    "mafiaRole": "المافيا:",
+    "mafiaDesc": "صوّت في طور الليل لإقصاء لاعب. تعاونوا للتخلص من جميع القرويين والطبيب.",
+    "doctorRole": "الطبيب:",
+    "doctorDesc": "صوّت في طور الليل لإنقاذ لاعب. إن أنقذت نفس من تستهدفه المافيا تنقذهم من الموت. احفظ هويتك سراً!",
+    "villagerRole": "القروي:",
+    "villagerDesc": "صوّت في طور النهار لإعدام مشتبه به من المافيا. استخدم النقاش والاستنتاج لاكتشاف المافيا.",
+    "roleDistribution": "توزيع الأدوار:",
+    "roleDistributionDesc": "لـ 7+ لاعبين: 2 مافيا، طبيب واحد، والباقي قرويون. للألعاب الأصغر: مافيا واحد، طبيب واحد، والباقي قرويون.",
+    "gamePhases": "أطوار اللعبة",
+    "dayPhase": "طور النهار (60 ثانية):",
+    "dayPhaseDesc": "يناقش جميع اللاعبين الأحياء ويصوتون لإعدام مشتبه به. يُقصى اللاعب الحاصل على أكبر عدد من الأصوات. يمكنك تغيير تصويتك في أي وقت خلال الطور.",
+    "nightPhase": "طور الليل (60 ثانية):",
+    "nightPhaseDesc": "يصوّت أعضاء المافيا لقتل لاعب (القرار بأغلبية الأصوات). الطبيب يصوّت لإنقاذ لاعب. إن أنقذ الطبيب نفس من تستهدفه المافيا يُنقذ ذلك اللاعب. لا يستطيع القرويون التصرف ليلاً.",
+    "phaseTransition": "تنتقل الأطوار تلقائياً بعد 60 ثانية. تتناوب اللعبة بين النهار والليل حتى يفوز فريق.",
+    "votingRules": "قواعد التصويت",
+    "votingRule1": "اللاعبون الأحياء فقط يمكنهم التصويت أو التعليق",
+    "votingRule2": "تُحسب الأصوات بالأغلبية - يُختار اللاعب الأكثر تصويتاً",
+    "votingRule3": "يمكنك تغيير تصويتك في أي وقت خلال الطور",
+    "votingRule4": "يمكنك الامتناع بعدم التصويت أو إلغاء تصويتك",
+    "winningConditions": "شروط الفوز",
+    "villagersWin": "فوز القرويين:",
+    "villagersWinDesc": "تُقصى جميع أعضاء المافيا",
+    "mafiaWins": "فوز المافيا:",
+    "mafiaWinsDesc1": "يتساوى عدد المافيا أو يفوق باقي اللاعبين (قرويون + طبيب)",
+    "mafiaWinsDesc2": "لا يبقى أطباء وتتساوى المافيا أو تفوق القرويين"
+  },
+  "gamesList": {
+    "creatingGame": "جاري إنشاء اللعبة...",
+    "createNewGame": "إنشاء لعبة جديدة",
+    "availableGames": "الألعاب المتاحة",
+    "noGames": "لا توجد ألعاب. أنشئ واحدة للبدء!"
+  },
+  "nicknameForm": {
+    "enterNickname": "أدخل لقبك",
+    "nicknamePlaceholder": "لقبك",
+    "chooseAvatar": "اختر صورتك الرمزية",
+    "selectedAvatar": "الصورة المختارة",
+    "selectAvatar": "اختر صورة",
+    "avatarOption": "خيار صورة"
+  },
+  "gameNameForm": {
+    "enterGameName": "أدخل اسم اللعبة",
+    "gameNamePlaceholder": "اسم اللعبة"
+  },
+  "gameCard": {
+    "yourGame": "لعبتك",
+    "joined": "منضم",
+    "host": "المضيف: {{name}}",
+    "players": "اللاعبون:",
+    "inGame": "في اللعبة",
+    "justNow": "الآن",
+    "minsAgo": "{{count}} د منذ",
+    "hoursAgo": "{{count}} س منذ",
+    "daysAgo": "{{count}} ي منذ"
+  },
+  "onlinePlayers": {
+    "title": "اللاعبون المتصلون ({{count}})",
+    "loading": "جاري تحميل اللاعبين...",
+    "noPlayers": "لا يوجد لاعبون متصلون"
+  },
+  "game": {
+    "startGame": "بدء اللعبة",
+    "gameLog": "سجل اللعبة",
+    "noLogEntries": "لا توجد أحداث بعد. ستظهر أحداث اللعبة هنا.",
+    "hostedBy": "المضيف",
+    "chat": "الدردشة",
+    "players": "اللاعبون",
+    "comments": "التعليقات",
+    "commentPlaceholder": "اكتب تعليقك... (Enter للإرسال، Shift+Enter سطر جديد)",
+    "charactersCount": "{{count}}/500 حرف",
+    "noComments": "لا تعليقات بعد. كن أول من يعلق!",
+    "noPlayersYet": "لا لاعبين بعد.",
+    "gameOver": "انتهت اللعبة!",
+    "villagersWon": "فاز القرويون!",
+    "mafiaWon": "فازت المافيا!",
+    "gameStarted": "بدأت اللعبة!"
+  },
+  "status": {
+    "waiting": "انتظار",
+    "inProgress": "جارية",
+    "finished": "منتهية",
+    "cancelled": "ملغاة"
+  },
+  "roles": {
+    "mafia": "مافيا",
+    "doctor": "طبيب",
+    "villager": "قروي",
+    "yourRole": "دورك: {{role}}",
+    "mafiaDescription": "أنت من المافيا. تصوّتوا معاً لإقصاء القرويين ليلاً.",
+    "doctorDescription": "أنت الطبيب. أنقذ اللاعبين من هجمات المافيا بإنقاذهم ليلاً.",
+    "villagerDescription": "أنت قروي. تعاون مع الآخرين لاكتشاف وإعدام المافيا نهاراً."
+  },
+  "voting": {
+    "voteToLynch": "التصويت للإعدام",
+    "voteToKill": "التصويت للقتل",
+    "chooseToHeal": "اختر للإنقاذ",
+    "chooseWhoToLynch": "اختر من تُعدم:",
+    "chooseWhoToKill": "اختر من تُقتل:",
+    "chooseWhoToHeal": "اختر من تُنقذ:",
+    "chooseTarget": "اختر هدفاً:",
+    "abstain": "امتناع (لا تصويت)",
+    "updateVote": "تحديث التصويت"
+  },
+  "modal": {
+    "closeAria": "إغلاق"
+  }
+}

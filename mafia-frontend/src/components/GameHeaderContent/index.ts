@@ -1,0 +1,1 @@
+export { GameHeaderContent } from './GameHeaderContent'
