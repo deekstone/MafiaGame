@@ -1,4 +1,7 @@
 # Mafia
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](./CONTRIBUTING.md) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 
@@ -117,3 +120,25 @@ This project is licensed under the MIT License — see the [**LICENSE**](./LICEN
 ## Conclusion
 
 This project is a full-stack **real-time Mafia game**: players join a lobby, create or join games, and play through day/night phases with voting, roles (Mafia, Doctor, Villagers), and live updates. The backend keeps game state in memory, manages Socket.IO rooms and REST APIs, and runs a daily cleanup job. The frontend provides the lobby and game UI with WebSocket subscriptions, TanStack Query, and optional i18n and Storybook. Everything is TypeScript, with a single repo and pnpm workspace for straightforward install and run (`pnpm install` then `pnpm dev`).
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/deekstone"><img src="https://avatars.githubusercontent.com/u/25669517?v=4?s=100" width="100px;" alt="Elie Deek"/><br /><sub><b>Elie Deek</b></sub></a><br /><a href="#infra-deekstone" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#design-deekstone" title="Design">🎨</a> <a href="https://github.com/deekstone/MafiaGame/commits?author=deekstone" title="Code">💻</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
