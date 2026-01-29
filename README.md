@@ -4,6 +4,14 @@ A real-time multiplayer Mafia game with a React frontend and Node.js/Express bac
 
 ---
 
+## Screenshots
+
+| Screenshot 1                                    | Screenshot 2                                    | Screenshot 3                                    |
+| ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
+| ![Screenshot 1](./screenshots/Screenshot_1.png) | ![Screenshot 2](./screenshots/Screenshot_2.png) | ![Screenshot 3](./screenshots/Screenshot_3.png) |
+
+---
+
 ## Project structure
 
 This is a **pnpm workspace** with two packages:
