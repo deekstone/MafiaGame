@@ -106,6 +106,12 @@ This project is open for contribution. We welcome bug reports, feature ideas, pu
 
 ---
 
+## License
+
+This project is licensed under the MIT License — see the [**LICENSE**](./LICENSE) file for details.
+
+---
+
 ## Conclusion
 
 This project is a full-stack **real-time Mafia game**: players join a lobby, create or join games, and play through day/night phases with voting, roles (Mafia, Doctor, Villagers), and live updates. The backend keeps game state in memory, manages Socket.IO rooms and REST APIs, and runs a daily cleanup job. The frontend provides the lobby and game UI with WebSocket subscriptions, TanStack Query, and optional i18n and Storybook. Everything is TypeScript, with a single repo and pnpm workspace for straightforward install and run (`pnpm install` then `pnpm dev`).
