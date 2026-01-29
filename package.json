@@ -4,7 +4,7 @@
   "private": true,
   "packageManager": "pnpm@10.14.0",
   "scripts": {
-    "dev": "concurrently \"pnpm --filter ./my-node-ts dev\" \"pnpm --filter ./mafia-frontend dev\"",
+    "dev": "concurrently \"pnpm --filter ./mafia-backend dev\" \"pnpm --filter ./mafia-frontend dev --host\"",
     "dev:backend": "pnpm --filter ./mafia-backend dev",
     "dev:frontend": "pnpm --filter ./mafia-frontend dev",
     "build": "pnpm --filter ./my-node-ts build && pnpm --filter ./mafia-frontend build",
