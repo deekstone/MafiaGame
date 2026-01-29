@@ -18,7 +18,7 @@ This is a **pnpm workspace** with two packages:
 
 | Package      | Path                                  | Description                                          |
 | ------------ | ------------------------------------- | ---------------------------------------------------- |
-| **Backend**  | [`my-node-ts/`](./my-node-ts)         | Node.js/Express API + Socket.IO game server          |
+| **Backend**  | [`mafia-backend/`](./mafia-backend)   | Node.js/Express API + Socket.IO game server          |
 | **Frontend** | [`mafia-frontend/`](./mafia-frontend) | React + Vite SPA (lobby, game UI, real-time updates) |
 
 ---
@@ -71,7 +71,7 @@ pnpm build
 Builds both backend and frontend. To run the backend after building:
 
 ```bash
-cd my-node-ts && pnpm start
+cd mafia-backend && pnpm start
 ```
 
 Serve the frontend build (e.g. from `mafia-frontend/dist`) with any static file server.
@@ -86,15 +86,15 @@ Serve the frontend build (e.g. from `mafia-frontend/dist`) with any static file 
 
 ## Documentation (README files)
 
-| Document                                                                           | Description                                                                                                                                |
-| ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| [**mafia-frontend/README.md**](./mafia-frontend/README.md)                         | Frontend app: stack (React, Vite, TanStack Router, Tailwind), structure, pages (Lobby, Game), hooks, env vars, Socket.IO events, Storybook |
-| [**my-node-ts/README.md**](./my-node-ts/README.md)                                 | Backend service: stack (Express, Socket.IO), architecture, API and Socket events, game rules, how to run                                   |
-| [**my-node-ts/src/socket/README.md**](./my-node-ts/src/socket/README.md)           | Socket handlers: `gameSocket.ts`, events handled/emitted, room management                                                                  |
-| [**my-node-ts/src/services/README.md**](./my-node-ts/src/services/README.md)       | Core services: GameManager, ConnectionManager, NicknameManager and their methods                                                           |
-| [**my-node-ts/src/routes/README.md**](./my-node-ts/src/routes/README.md)           | HTTP routes: game and user REST endpoints, auth, integration                                                                               |
-| [**my-node-ts/src/middlewares/README.md**](./my-node-ts/src/middlewares/README.md) | Middlewares: user identity via `mafia_user_id` cookie                                                                                      |
-| [**my-node-ts/src/jobs/README.md**](./my-node-ts/src/jobs/README.md)               | Background jobs: game cleanup cron (inactive games)                                                                                        |
+| Document                                                                                 | Description                                                                                                                                |
+| ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| [**mafia-frontend/README.md**](./mafia-frontend/README.md)                               | Frontend app: stack (React, Vite, TanStack Router, Tailwind), structure, pages (Lobby, Game), hooks, env vars, Socket.IO events, Storybook |
+| [**mafia-backend/README.md**](./mafia-backend/README.md)                                 | Backend service: stack (Express, Socket.IO), architecture, API and Socket events, game rules, how to run                                   |
+| [**mafia-backend/src/socket/README.md**](./mafia-backend/src/socket/README.md)           | Socket handlers: `gameSocket.ts`, events handled/emitted, room management                                                                  |
+| [**mafia-backend/src/services/README.md**](./mafia-backend/src/services/README.md)       | Core services: GameManager, ConnectionManager, NicknameManager and their methods                                                           |
+| [**mafia-backend/src/routes/README.md**](./mafia-backend/src/routes/README.md)           | HTTP routes: game and user REST endpoints, auth, integration                                                                               |
+| [**mafia-backend/src/middlewares/README.md**](./mafia-backend/src/middlewares/README.md) | Middlewares: user identity via `mafia_user_id` cookie                                                                                      |
+| [**mafia-backend/src/jobs/README.md**](./mafia-backend/src/jobs/README.md)               | Background jobs: game cleanup cron (inactive games)                                                                                        |
 
 ---
 
