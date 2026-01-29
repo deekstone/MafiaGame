@@ -2,6 +2,8 @@
 
 A real-time multiplayer Mafia game with a React frontend and Node.js/Express backend, using Socket.IO for live game state and WebSocket communication.
 
+**Contributions are welcome.** See [Contributing](./CONTRIBUTING.md) for how to get involved.
+
 ---
 
 ## Screenshots
@@ -95,6 +97,12 @@ Serve the frontend build (e.g. from `mafia-frontend/dist`) with any static file 
 | [**mafia-backend/src/routes/README.md**](./mafia-backend/src/routes/README.md)           | HTTP routes: game and user REST endpoints, auth, integration                                                                               |
 | [**mafia-backend/src/middlewares/README.md**](./mafia-backend/src/middlewares/README.md) | Middlewares: user identity via `mafia_user_id` cookie                                                                                      |
 | [**mafia-backend/src/jobs/README.md**](./mafia-backend/src/jobs/README.md)               | Background jobs: game cleanup cron (inactive games)                                                                                        |
+
+---
+
+## Contributing
+
+This project is open for contribution. We welcome bug reports, feature ideas, pull requests, and documentation improvements. Please read [**CONTRIBUTING.md**](./CONTRIBUTING.md) for guidelines on how to contribute.
 
 ---
 
