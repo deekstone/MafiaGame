@@ -25,6 +25,7 @@ export function OnlinePlayersList() {
       ) : (
         <div className="space-y-2 max-h-96 overflow-y-auto">
           {players.map((player) => {
+            const displayName = player.nickname || 'Anonymous'
             const isCurrentUser = player.userId === currentUser?.id
             return (
               <div
@@ -37,8 +38,8 @@ export function OnlinePlayersList() {
               >
                 <div className="relative shrink-0">
                   <img
-                    src={getAvatarUrl(player.nickname, player.avatarSeed)}
-                    alt={player.nickname}
+                    src={getAvatarUrl(displayName, player.avatarSeed)}
+                    alt={displayName}
                     className="w-10 h-10 rounded-full border-2 border-gray-300 dark:border-gray-600"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement
@@ -51,10 +52,10 @@ export function OnlinePlayersList() {
                   />
                   <div
                     className={`avatar-fallback w-10 h-10 rounded-full border-2 border-gray-300 dark:border-gray-600 ${getAvatarColor(
-                      player.nickname
+                      displayName
                     )} text-white items-center justify-center font-semibold text-sm hidden`}
                   >
-                    {getInitials(player.nickname)}
+                    {getInitials(displayName)}
                   </div>
                 </div>
                 <Text
@@ -63,7 +64,7 @@ export function OnlinePlayersList() {
                   weight={isCurrentUser ? 'semibold' : 'normal'}
                   className="flex-1"
                 >
-                  {player.nickname}
+                  {displayName}
                   {isCurrentUser && (
                     <Text variant="span" size="sm" color="muted" className="ml-2">
                       {t('common.you')}

@@ -21,16 +21,19 @@ export function useComments(gameId: string | undefined) {
 
   // Helper function to convert Comment to CommentEntry
   const convertCommentToEntry = useCallback((comment: Comment): CommentEntry => {
+    const source = 'user' in comment && comment.user ? comment.user : comment
+
     const timestamp =
       comment.timestamp instanceof Date ? comment.timestamp : new Date(comment.timestamp)
 
     return {
       id: comment.id,
       gameId: comment.gameId,
-      userId: comment.userId,
-      nickname: comment.nickname,
+      userId: source.userId ?? 'unknown',
+      nickname: source.nickname ?? 'Anonymous',
       message: comment.message,
       timestamp,
+      Usercolor: source.Usercolor ?? '#000000', // Default to black if Usercolor is missing
     }
   }, [])
 
@@ -55,6 +58,7 @@ export function useComments(gameId: string | undefined) {
 
     // Listen for individual game:comment events (new comments as they happen)
     const handleGameComment = (data: { gameId: string; comment: Comment }) => {
+      console.log('received game:comment', data)
       const commentEntry = convertCommentToEntry(data.comment)
 
       setComments((prev) => {

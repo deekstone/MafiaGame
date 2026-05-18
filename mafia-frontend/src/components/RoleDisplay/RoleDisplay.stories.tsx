@@ -39,6 +39,9 @@ export const Villager: Story = {
 }
 
 export const AllRoles: Story = {
+  args: {
+    role: 'mafia',
+  },
   render: () => (
     <div className="space-y-4">
       <RoleDisplay role="mafia" />

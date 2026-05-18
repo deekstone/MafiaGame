@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { VotingInterface } from './VotingInterface'
-import type { Game, PlayerRole } from '../types/game'
+import type { Game } from '../../types/game'
 
 const meta = {
   title: 'Components/VotingInterface',

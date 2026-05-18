@@ -10,6 +10,7 @@ export interface Player {
   avatarSeed?: string
   role?: PlayerRole // Assigned when game starts
   alive: boolean // Default true, set to false when killed
+  Usercolor?: string
 }
 
 export interface Vote {
@@ -75,10 +76,12 @@ export interface GameLog {
 export interface Comment {
   id: string
   gameId: string
-  userId: string
-  nickname: string
   message: string
   timestamp: string | Date
+  user?: Player
+  userId?: string
+  nickname?: string
+  Usercolor?: string
 }
 
 // Comment entry for frontend (normalized timestamp)
@@ -89,4 +92,5 @@ export interface CommentEntry {
   nickname: string
   message: string
   timestamp: Date
+  Usercolor: string
 }

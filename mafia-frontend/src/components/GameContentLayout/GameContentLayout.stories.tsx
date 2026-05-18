@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { useState } from 'react'
 import { GameContentLayout } from './GameContentLayout'
-import type { Game, PlayerRole } from '../types/game'
-
+// import type { Game, PlayerRole } from '../types/game'
+import type { Game } from '../../types/game'
 const meta = {
   title: 'Components/GameContentLayout',
   component: GameContentLayout,
@@ -39,6 +39,7 @@ const LayoutWrapper = ({ activeTab = 'chat' }: { activeTab?: 'chat' | 'players' 
       nickname: 'Alice',
       message: 'Hello everyone!',
       timestamp: new Date(),
+        Usercolor: '#FF6B6B',
     },
   ])
   const [isSending, setIsSending] = useState(false)
@@ -55,6 +56,7 @@ const LayoutWrapper = ({ activeTab = 'chat' }: { activeTab?: 'chat' | 'players' 
         nickname: 'Bob',
         message,
         timestamp: new Date(),
+          Usercolor: '#4ECDC4',
       },
     ])
     setIsSending(false)
@@ -77,8 +79,28 @@ const LayoutWrapper = ({ activeTab = 'chat' }: { activeTab?: 'chat' | 'players' 
 
 export const ChatTab: Story = {
   render: () => <LayoutWrapper activeTab="chat" />,
+  args: {
+    activeTab: 'chat',
+    comments: [],
+    onSendComment: async () => true,
+    isSending: false,
+    players: mockGame.players,
+    game: mockGame,
+    currentUserId: 'user-1',
+    currentPlayerRole: 'villager',
+  },
 }
 
 export const PlayersTab: Story = {
   render: () => <LayoutWrapper activeTab="players" />,
+  args: {
+    activeTab: 'players',
+    comments: [],
+    onSendComment: async () => true,
+    isSending: false,
+    players: mockGame.players,
+    game: mockGame,
+    currentUserId: 'user-1',
+    currentPlayerRole: 'villager',
+  },
 }

@@ -32,10 +32,18 @@ const MessageSectionWrapper = ({ initialMessages = [] }: { initialMessages?: any
 }
 
 export const Empty: Story = {
+  args: {
+    messages: [],
+    onAddMessage: () => {},
+  },
   render: () => <MessageSectionWrapper />,
 }
 
 export const WithMessages: Story = {
+  args: {
+    messages: [],
+    onAddMessage: () => {},
+  },
   render: () => (
     <MessageSectionWrapper
       initialMessages={[

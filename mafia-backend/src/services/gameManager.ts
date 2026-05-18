@@ -67,12 +67,14 @@ export class GameManager {
     const hostProfile = NicknameManager.getProfile(hostId)
     const hostNickname = hostProfile?.nickname || 'Unknown'
     const hostAvatarSeed = hostProfile?.avatarSeed || hostNickname
+    const hostUserColor = hostProfile?.userColor
     const players: Player[] = [
       {
         userId: hostId,
         nickname: hostNickname,
         avatarSeed: hostAvatarSeed,
         alive: true,
+        Usercolor: hostUserColor || "#FF4B33",
       },
     ]
 
@@ -287,6 +289,8 @@ export class GameManager {
       nickname: playerNickname,
       avatarSeed: playerAvatarSeed,
       alive: true,
+      //update
+      Usercolor: playerProfile?.userColor || "#FF4B33",
     })
 
     // Increment player count
@@ -354,13 +358,13 @@ export class GameManager {
       if (game.status === 'waiting') {
         // Remove host from players array
         game.players.splice(playerIndex, 1)
-        
+
         // Decrement player count
         game.currentPlayers = Math.max(0, game.currentPlayers - 1)
-        
+
         // Cancel the game
         game.status = 'cancelled'
-        
+
         // Add log entry
         const leaveLog: GameLog = {
           id: randomUUID(),
@@ -371,7 +375,7 @@ export class GameManager {
           logParams: { nickname: player.nickname },
         }
         game.logs.unshift(leaveLog)
-        
+
         games.set(gameId, game)
 
         const enrichedGame = {
@@ -500,7 +504,9 @@ export class GameManager {
   static addComment(
     gameId: string,
     userId: string,
-    message: string
+    message: string,
+    nickname: string | undefined,
+    userColor: string | undefined
   ): { success: boolean; comment?: Comment; error?: string } {
     const game = games.get(gameId)
 
@@ -548,13 +554,19 @@ export class GameManager {
     const comment: Comment = {
       id: randomUUID(),
       gameId,
-      userId,
-      nickname: player.nickname,
-      message: message.trim(),
+      user: {
+
+        userId: player.userId,
+        nickname: player.nickname,
+        avatarSeed: player.avatarSeed,
+        alive: player.alive,
+        role: player.role,
+        Usercolor: player.Usercolor,
+      },
       timestamp: new Date(),
-      alive: player.alive,
-      role: player.role,
+      message: message.trim(),
     }
+    console.log('Adding comment:', comment)
 
     // Add comment to game (prepend to show newest first)
     game.comments.unshift(comment)
@@ -659,7 +671,7 @@ export class GameManager {
     const players = game.players
     for (let i = players.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1))
-      ;[players[i], players[j]] = [players[j], players[i]]
+        ;[players[i], players[j]] = [players[j], players[i]]
     }
 
     // Update game state
@@ -780,10 +792,10 @@ export class GameManager {
       // Doctor heal
       game.doctorHeal = targetUserId
         ? {
-            fromUserId: userId,
-            targetUserId,
-            timestamp: new Date(),
-          }
+          fromUserId: userId,
+          targetUserId,
+          timestamp: new Date(),
+        }
         : null
     } else {
       return {

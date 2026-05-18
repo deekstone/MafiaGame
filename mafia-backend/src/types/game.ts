@@ -12,6 +12,8 @@ export interface Player {
   avatarSeed?: string // Optional avatar seed (DiceBear seed)
   role?: PlayerRole // Assigned when game starts
   alive: boolean // Default true, set to false when killed
+  // update
+  Usercolor:string
 }
 
 export interface Vote {
@@ -31,11 +33,14 @@ export interface GameLog {
   logParams?: Record<string, string | number>
 }
 
-export interface Comment extends Player {
+export interface Comment  {
   id: string
   gameId: string
   message: string
   timestamp: Date
+  // update
+  user:Player
+
 }
 
 export interface Game {

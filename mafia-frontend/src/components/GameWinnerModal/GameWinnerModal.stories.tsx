@@ -27,12 +27,15 @@ const ModalWrapper = ({ winner }: { winner: 'villagers' | 'mafia' | null }) => {
 
 export const VillagersWin: Story = {
   render: () => <ModalWrapper winner="villagers" />,
+  args: { isOpen: true, onClose: () => {}, winner: 'villagers' },
 }
 
 export const MafiaWins: Story = {
   render: () => <ModalWrapper winner="mafia" />,
+  args: { isOpen: true, onClose: () => {}, winner: 'mafia' },
 }
 
 export const NoWinner: Story = {
   render: () => <ModalWrapper winner={null} />,
+  args: { isOpen: true, onClose: () => {}, winner: null },
 }

@@ -75,6 +75,9 @@ export const Label: Story = {
 }
 
 export const AllSizes: Story = {
+  args: {
+    children: 'Sample Text',
+  },
   render: () => (
     <div className="space-y-2">
       <Text size="xs">Extra Small Text</Text>
@@ -88,6 +91,9 @@ export const AllSizes: Story = {
 }
 
 export const AllColors: Story = {
+  args: {
+    children: 'Sample Text',
+  },
   render: () => (
     <div className="space-y-2">
       <Text color="primary">Primary Color</Text>
@@ -101,6 +107,9 @@ export const AllColors: Story = {
 }
 
 export const AllWeights: Story = {
+  args: {
+    children: 'Sample Text',
+  },
   render: () => (
     <div className="space-y-2">
       <Text weight="normal">Normal Weight</Text>
@@ -112,6 +121,9 @@ export const AllWeights: Story = {
 }
 
 export const AllVariants: Story = {
+  args: {
+    children: 'Sample Text',
+  },
   render: () => (
     <div className="space-y-4">
       <Text variant="h1">Heading 1</Text>
