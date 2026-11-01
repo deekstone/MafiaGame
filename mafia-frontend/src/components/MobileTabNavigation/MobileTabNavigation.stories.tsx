@@ -31,13 +31,25 @@ const TabNavigationWrapper = ({ initialTab = 'chat' }: { initialTab?: 'chat' | '
 }
 
 export const ChatActive: Story = {
+  args: {
+    activeTab: 'chat',
+    onTabChange: () => {},
+  },
   render: () => <TabNavigationWrapper initialTab="chat" />,
 }
 
 export const PlayersActive: Story = {
+  args: {
+    activeTab: 'players',
+    onTabChange: () => {},
+  },
   render: () => <TabNavigationWrapper initialTab="players" />,
 }
 
 export const Interactive: Story = {
+  args: {
+    activeTab: 'chat',
+    onTabChange: () => {},
+  },
   render: () => <TabNavigationWrapper />,
 }

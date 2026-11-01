@@ -15,11 +15,12 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
-  render: () => (
+  args: {
+    children: <Text variant="h1">Fixed Header Content</Text>,
+  },
+  render: (args) => (
     <div>
-      <FixedHeader>
-        <Text variant="h1">Fixed Header Content</Text>
-      </FixedHeader>
+      <FixedHeader {...args} />
       <div className="pt-20 p-8">
         <Text variant="p">Scroll down to see the header stays fixed at the top.</Text>
         {Array.from({ length: 20 }).map((_, i) => (
@@ -33,18 +34,21 @@ export const Default: Story = {
 }
 
 export const WithNavigation: Story = {
-  render: () => (
-    <div>
-      <FixedHeader>
-        <div className="flex items-center justify-between">
-          <Text variant="h2">Game Title</Text>
-          <div className="flex gap-4">
-            <Text variant="span">Home</Text>
-            <Text variant="span">Games</Text>
-            <Text variant="span">Profile</Text>
-          </div>
+  args: {
+    children: (
+      <div className="flex items-center justify-between">
+        <Text variant="h2">Game Title</Text>
+        <div className="flex gap-4">
+          <Text variant="span">Home</Text>
+          <Text variant="span">Games</Text>
+          <Text variant="span">Profile</Text>
         </div>
-      </FixedHeader>
+      </div>
+    ),
+  },
+  render: (args) => (
+    <div>
+      <FixedHeader {...args} />
       <div className="pt-20 p-8">
         <Text variant="p">Header with navigation elements.</Text>
       </div>

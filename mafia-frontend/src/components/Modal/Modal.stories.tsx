@@ -51,6 +51,10 @@ const ModalWrapper = ({
 }
 
 export const Default: Story = {
+  args: {
+    isOpen: false,
+    onClose: () => {},
+  },
   render: () => (
     <ModalWrapper>
       <Text variant="p">This is a simple modal with some content.</Text>
@@ -59,6 +63,11 @@ export const Default: Story = {
 }
 
 export const WithTitle: Story = {
+  args: {
+    isOpen: false,
+    onClose: () => {},
+    title: 'Modal Title',
+  },
   render: () => (
     <ModalWrapper title="Modal Title">
       <Text variant="p">This modal has a title.</Text>
@@ -67,6 +76,11 @@ export const WithTitle: Story = {
 }
 
 export const WithContent: Story = {
+  args: {
+    isOpen: false,
+    onClose: () => {},
+    title: 'Confirmation',
+  },
   render: () => (
     <ModalWrapper title="Confirmation">
       <div className="space-y-4">
@@ -85,6 +99,11 @@ export const WithContent: Story = {
 }
 
 export const LongContent: Story = {
+  args: {
+    isOpen: false,
+    onClose: () => {},
+    title: 'Long Content Modal',
+  },
   render: () => (
     <ModalWrapper title="Long Content Modal">
       <div className="space-y-4">

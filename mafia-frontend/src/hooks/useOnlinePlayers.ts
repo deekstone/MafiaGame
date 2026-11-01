@@ -5,8 +5,8 @@ import { BACKEND_URL } from '../constants'
 
 interface OnlinePlayer {
   userId: string
-  nickname: string
-  avatarSeed: string
+  nickname: string | null
+  avatarSeed: string | null
 }
 
 interface OnlinePlayersResponse {

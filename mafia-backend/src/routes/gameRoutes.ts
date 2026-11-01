@@ -3,6 +3,7 @@ import { GameManager } from '../services/gameManager'
 import { GameStatus } from '../types/game'
 import { GameSocketHandler } from '../socket/gameSocket'
 import { maskRolesForViewer } from '../utils/gameVisibility'
+import { NicknameManager } from '../services/nicknameManager'
 /**
  * Create game routes
  */
@@ -221,7 +222,8 @@ export function createGameRoutes(gameSocketHandler: GameSocketHandler): Router {
       const { gameId } = req.params
       const userId = req.userId!
       const { message } = req.body
-
+      const nickname = NicknameManager.getProfile(userId)?.nickname || 'Anonymous'
+      const userColor=NicknameManager.getProfile(userId)?.userColor || '#000000'
       if (!userId) {
         return res.status(400).json({ error: 'User identity missing' })
       }
@@ -232,7 +234,7 @@ export function createGameRoutes(gameSocketHandler: GameSocketHandler): Router {
         })
       }
 
-      const result = GameManager.addComment(gameId, userId, message)
+      const result = GameManager.addComment(gameId, userId, message, nickname, userColor)
 
       if (!result.success) {
         return res.status(400).json({
@@ -250,6 +252,8 @@ export function createGameRoutes(gameSocketHandler: GameSocketHandler): Router {
         success: true,
         comment: result.comment,
       })
+      console.log("info---",nickname, message,userColor)
+      console.log('Comment added:', result)
     } catch (error) {
       console.error('Error sending comment:', error)
       res.status(500).json({

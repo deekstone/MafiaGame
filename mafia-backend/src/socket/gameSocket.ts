@@ -4,6 +4,7 @@ import { CreateGameRequest, Game, GameLog, Comment } from '../types/game'
 import { ConnectionManager } from '../services/connectionManager'
 import { maskRolesForViewer } from '../utils/gameVisibility'
 import { translateLog, normalizeLogLang, type LogLang } from '../i18n/logs'
+import { NicknameManager } from '../services/nicknameManager'
 
 type GameResponse = {
   success: boolean
@@ -567,7 +568,7 @@ export class GameSocketHandler {
       }
 
       // Add comment via GameManager
-      const result = GameManager.addComment(data.gameId, userId, data.message)
+      const result = GameManager.addComment(data.gameId, userId, data.message,NicknameManager.getNickname(userId),NicknameManager.getUserColor(userId))
 
       if (!result.success) {
         callback?.({
@@ -603,6 +604,7 @@ export class GameSocketHandler {
   emitGameComment(gameId: string, comment: Comment): void {
     // Emit only to subscribers of this game's room
     const gameRoom = this.getGameRoom(gameId)
+  console.log('emitGameComment payload:', { gameId, comment })
     this.io.to(gameRoom).emit('game:comment', {
       gameId,
       comment,

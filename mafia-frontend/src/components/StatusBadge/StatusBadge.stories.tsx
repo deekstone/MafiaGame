@@ -45,6 +45,9 @@ export const Cancelled: Story = {
 }
 
 export const AllStatuses: Story = {
+  args: {
+    status: 'waiting',
+  },
   render: () => (
     <div className="flex gap-4 items-center">
       <StatusBadge status="waiting" />

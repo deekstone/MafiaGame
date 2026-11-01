@@ -29,7 +29,7 @@ const CommentSectionWrapper = ({ initialComments = [] }: { initialComments?: any
         userId: 'user-1',
         nickname: 'Current User',
         message,
-        timestamp: new Date(),
+        timestamp: new Date()
       },
     ])
     setIsSending(false)
@@ -46,10 +46,20 @@ const CommentSectionWrapper = ({ initialComments = [] }: { initialComments?: any
 }
 
 export const Empty: Story = {
+  args: {
+    comments: [],
+    onSendComment: async () => true,
+    isSending: false,
+  },
   render: () => <CommentSectionWrapper />,
 }
 
 export const WithComments: Story = {
+  args: {
+    comments: [],
+    onSendComment: async () => true,
+    isSending: false,
+  },
   render: () => (
     <CommentSectionWrapper
       initialComments={[
@@ -83,6 +93,11 @@ export const WithComments: Story = {
 }
 
 export const ManyComments: Story = {
+  args: {
+    comments: [],
+    onSendComment: async () => true,
+    isSending: false,
+  },
   render: () => (
     <CommentSectionWrapper
       initialComments={Array.from({ length: 15 }).map((_, i) => ({

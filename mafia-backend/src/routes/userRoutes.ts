@@ -2,6 +2,8 @@ import { Router, Request, Response } from 'express'
 import { Server } from 'socket.io'
 import { NicknameManager } from '../services/nicknameManager'
 import { ConnectionManager } from '../services/connectionManager'
+import { stringToColor } from '../utils/userColor'
+
 
 /**
  * Create user routes
@@ -28,6 +30,7 @@ export function createUserRoutes(io?: Server): Router {
           id: userId,
           nickname: profile?.nickname || null,
           avatarSeed: profile?.avatarSeed || null,
+          userColor: profile?.userColor || null,
         },
       })
     } catch (error) {
@@ -50,7 +53,7 @@ export function createUserRoutes(io?: Server): Router {
       }
 
       const { nickname, avatarSeed } = req.body
-
+      const userColor = stringToColor(userId)
       if (!nickname || typeof nickname !== 'string' || nickname.trim().length === 0) {
         return res.status(400).json({
           error: 'Nickname is required and must be a non-empty string',
@@ -58,7 +61,7 @@ export function createUserRoutes(io?: Server): Router {
       }
 
       const trimmedNickname = nickname.trim()
-      NicknameManager.setNickname(userId, trimmedNickname, avatarSeed)
+      NicknameManager.setNickname(userId, trimmedNickname, avatarSeed, userColor)
 
       // Emit online players update if user is connected and io is available
       if (io && ConnectionManager.isUserConnected(userId)) {
@@ -75,6 +78,8 @@ export function createUserRoutes(io?: Server): Router {
         nickname: trimmedNickname,
         avatarSeed: NicknameManager.getAvatarSeed(userId) || trimmedNickname,
         userId,
+        userColor: userColor,
+        //update
       })
     } catch (error) {
       console.error('Error setting nickname:', error)
@@ -102,8 +107,10 @@ export function createUserRoutes(io?: Server): Router {
         success: true,
         nickname: profile?.nickname || null,
         avatarSeed: profile?.avatarSeed || null,
+        userColor: profile?.userColor || null,
         userId,
       })
+      console.log(`Fetched nickname for user ${userId}:`, profile?.nickname)
     } catch (error) {
       console.error('Error getting nickname:', error)
       res.status(500).json({
@@ -119,12 +126,22 @@ export function createUserRoutes(io?: Server): Router {
   router.get('/online-players', (req: Request, res: Response) => {
     try {
       const onlinePlayers = ConnectionManager.getOnlinePlayers()
-
+      const nicknames = onlinePlayers.map((player) => {
+        const profile = NicknameManager.getProfile(player.userId)
+        return {
+          userId: player.userId,
+          nickname: profile?.nickname || 'Anonymous',
+          avatarSeed: profile?.avatarSeed || null,
+          userColor: profile?.userColor || null,
+        }
+      })
       res.status(200).json({
         success: true,
-        players: onlinePlayers,
+        players: nicknames,
         count: onlinePlayers.length,
+        
       })
+      console.log('Online players:', nicknames)
     } catch (error) {
       console.error('Error fetching online players:', error)
       res.status(500).json({
@@ -133,5 +150,22 @@ export function createUserRoutes(io?: Server): Router {
     }
   })
 
+  // demo
+  // get all nicknames
+  router.get('/all-nicknames',(req: Request, res: Response) => {
+    try{
+      const allNicknames= NicknameManager.getAllNicknames()
+      res.status(200).json({
+        success: true,
+        nicknames: Array.from(allNicknames.entries()).map(([userId, [nickname, avatarSeed, userColor]]) => ({ userId, nickname, avatarSeed, userColor })),
+      })
+
+    }catch(error){
+      console.error('Error fetching all nicknames:', error)
+      res.status(500).json({
+        error: 'Failed to fetch all nicknames',
+      })
+    }
+  })
   return router
 }
